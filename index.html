@@ -3,624 +3,353 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>Tomodachi Life: Living the Dream – Download Free Mobile</title>
+<title>Tomodachi Life: Living the Dream – Download Mobile</title>
 <meta name="description" content="Play Tomodachi Life Living the Dream on mobile! Create Miis, build relationships, and experience endless fun. Free download for iOS & Android."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
-
 <style>
 :root {
   --pink: #FF6B9D;
-  --pink-light: #FFB3CD;
   --blue: #4ECDC4;
   --yellow: #FFE66D;
   --purple: #A855F7;
   --dark: #1A1A2E;
-  --card: #ffffff;
   --text: #2d2d44;
   --muted: #7a7a9a;
   --radius: 20px;
   --shadow: 0 8px 32px rgba(0,0,0,0.12);
+  --topbar: 52px;
 }
-
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-
 body {
-  font-family: 'Nunito', sans-serif;
-  background: #FFF5FB;
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding-bottom: 100px;
+  font-family:'Nunito',sans-serif;
+  background:#FFF5FB;
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+  padding-top:var(--topbar);
+  padding-bottom:90px;
 }
 
-/* ─── TIKTOK VIRAL BANNER ─── */
-.viral-banner {
-  background: linear-gradient(90deg, #010101, #1a1a1a);
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+/* ── TOP BAR ── */
+.top-bar {
+  position:fixed; top:0; left:0; right:0;
+  height:var(--topbar); z-index:990;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,107,157,0.15);
+  box-shadow:0 2px 16px rgba(0,0,0,0.07);
+  display:flex; align-items:center;
+  justify-content:space-between;
+  padding:0 18px; gap:10px;
 }
-.tiktok-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: linear-gradient(135deg, #69C9D0, #EE1D52);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  font-size: 0.9rem;
+.tb-left { display:flex; align-items:center; gap:9px; }
+.tb-icon { width:34px; height:34px; border-radius:9px; box-shadow:0 2px 8px rgba(255,107,157,0.25); flex-shrink:0; }
+.tb-name { font-family:'Fredoka One',cursive; font-size:1rem; color:var(--dark); line-height:1.1; }
+.tb-name small { display:block; font-family:'Nunito',sans-serif; font-size:0.62rem; font-weight:700; color:var(--muted); }
+.tb-rating {
+  display:flex; align-items:center; gap:4px;
+  background:#fff8e7; border:1px solid #ffe066;
+  border-radius:50px; padding:4px 10px;
+  font-size:0.74rem; font-weight:800; color:#a16207;
+  white-space:nowrap;
 }
-.viral-badge {
-  background: #EE1D52;
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 50px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  -webkit-text-fill-color: #fff;
-}
-
-/* ─── LIVE COUNTER ─── */
-.live-counter {
-  background: linear-gradient(135deg, #fff0f6, #f0f9ff);
-  border-bottom: 1px solid rgba(255,107,157,0.15);
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-weight: 600;
-}
-.live-dot {
-  width: 8px; height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-  animation: livePulse 1.5s infinite;
-}
-@keyframes livePulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.5; transform:scale(1.4); }
-}
-#live-number { color: var(--pink); font-weight: 900; font-size: 0.9rem; }
-
-/* ─── HERO ─── */
-.hero {
-  padding: 28px 20px 20px;
-  text-align: center;
-  position: relative;
+.tb-btn {
+  background:linear-gradient(135deg,var(--pink),#FF4D8D);
+  color:#fff; border:none; cursor:pointer;
+  padding:8px 16px; border-radius:50px;
+  font-family:'Fredoka One',cursive; font-size:0.88rem;
+  box-shadow:0 3px 12px rgba(255,107,157,0.4);
+  white-space:nowrap; flex-shrink:0;
+  animation:ctaPulse 2.5s infinite;
 }
 
-.game-icon-wrap {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 18px;
-}
+/* ── HERO ── */
+.hero { padding:28px 20px 20px; text-align:center; }
+.game-icon-wrap { position:relative; display:inline-block; margin-bottom:18px; }
 .game-icon {
-  width: 108px;
-  height: 108px;
-  border-radius: 26px;
-  box-shadow: 0 16px 48px rgba(255,107,157,0.35), 0 4px 12px rgba(0,0,0,0.15);
-  display: block;
-  animation: iconFloat 3s ease-in-out infinite;
+  width:108px; height:108px; border-radius:26px; display:block;
+  box-shadow:0 16px 48px rgba(255,107,157,0.35),0 4px 12px rgba(0,0,0,0.15);
+  animation:iconFloat 3s ease-in-out infinite;
 }
-@keyframes iconFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
+@keyframes iconFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 .verified-chip {
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  background: #22c55e;
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 4px 8px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  box-shadow: 0 2px 8px rgba(34,197,94,0.4);
-  white-space: nowrap;
+  position:absolute; bottom:-10px; right:-10px;
+  background:#22c55e; color:#fff; font-size:0.65rem; font-weight:800;
+  padding:4px 8px; border-radius:50px; white-space:nowrap;
+  box-shadow:0 2px 8px rgba(34,197,94,0.4);
 }
-
-.game-title {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2rem;
-  line-height: 1.15;
-  color: var(--dark);
-  margin-bottom: 6px;
-}
-.game-title span {
-  background: linear-gradient(135deg, var(--pink), var(--purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-sub {
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-/* ─── MINI STATS ─── */
-.mini-stats {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
+.game-title { font-family:'Fredoka One',cursive; font-size:2rem; line-height:1.15; color:var(--dark); margin-bottom:6px; }
+.game-title span { background:linear-gradient(135deg,var(--pink),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero-sub { font-size:0.95rem; color:var(--muted); font-weight:600; margin-bottom:20px; line-height:1.5; }
+.mini-stats { display:flex; justify-content:center; gap:6px; margin-bottom:22px; flex-wrap:wrap; }
 .mini-stat {
-  background: #fff;
-  border-radius: 50px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  background:#fff; border-radius:50px; padding:6px 14px;
+  font-size:0.8rem; font-weight:700; color:var(--text);
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  display:flex; align-items:center; gap:5px;
 }
-
-/* ─── HERO CTA ─── */
-.hero-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+.hero-cta { display:flex; flex-direction:column; align-items:center; gap:10px; }
+.btn-main {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:linear-gradient(135deg,var(--pink),#FF4D8D);
+  color:#fff; border:none; cursor:pointer;
+  padding:17px 36px; border-radius:50px;
+  font-family:'Fredoka One',cursive; font-size:1.25rem; letter-spacing:0.5px;
+  box-shadow:0 8px 28px rgba(255,107,157,0.45);
+  animation:ctaPulse 2.5s infinite;
+  width:100%; max-width:320px;
+  position:relative; overflow:hidden;
 }
-.btn-download-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: linear-gradient(135deg, var(--pink), #FF4D8D);
-  color: #fff;
-  text-decoration: none;
-  padding: 17px 36px;
-  border-radius: 50px;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.25rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 8px 28px rgba(255,107,157,0.45), 0 2px 8px rgba(255,107,157,0.3);
-  animation: ctaPulse 2.5s infinite;
-  width: 100%;
-  max-width: 320px;
-  position: relative;
-  overflow: hidden;
+.btn-main::after {
+  content:''; position:absolute; top:-50%; left:-60%; width:40%; height:200%;
+  background:rgba(255,255,255,0.25); transform:skewX(-20deg);
+  animation:btnShine 3s infinite 1s;
 }
-.btn-download-main::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: rgba(255,255,255,0.25);
-  transform: skewX(-20deg);
-  animation: btnShine 3s infinite 1s;
-}
-@keyframes btnShine {
-  0% { left: -60%; }
-  100% { left: 130%; }
-}
+@keyframes btnShine { 0%{left:-60%} 100%{left:130%} }
 @keyframes ctaPulse {
-  0%,100% { box-shadow: 0 8px 28px rgba(255,107,157,0.45), 0 2px 8px rgba(255,107,157,0.3); }
-  50% { box-shadow: 0 12px 40px rgba(255,107,157,0.65), 0 4px 16px rgba(255,107,157,0.4); }
+  0%,100%{box-shadow:0 8px 28px rgba(255,107,157,0.45)}
+  50%{box-shadow:0 12px 40px rgba(255,107,157,0.65)}
 }
-.btn-download-main:active { transform: scale(0.97); }
+.btn-main:active { transform:scale(0.97); }
+.free-label { font-size:0.78rem; color:var(--muted); font-weight:600; display:flex; align-items:center; gap:6px; }
+.free-label span { color:#22c55e; font-weight:800; }
+.platform-hint { font-size:0.78rem; color:var(--muted); font-weight:600; margin-top:4px; }
 
-.free-label {
-  font-size: 0.78rem;
-  color: var(--muted);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.free-label span { color: #22c55e; font-weight: 800; }
-
-/* ─── PLATFORM DETECT HINT ─── */
-.platform-hint {
-  font-size: 0.78rem;
-  color: var(--muted);
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-/* ─── SECTION WRAPPER ─── */
-.section {
-  padding: 0 16px;
-  margin-bottom: 24px;
-}
-.section-title {
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.4rem;
-  color: var(--dark);
-  margin-bottom: 14px;
-  text-align: center;
-}
-
-/* ─── FEATURES ─── */
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+/* ── SECTIONS ── */
+.section { padding:0 16px; margin-bottom:24px; }
+.section-title { font-family:'Fredoka One',cursive; font-size:1.4rem; color:var(--dark); margin-bottom:14px; text-align:center; }
+.features-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 .feat-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 18px 14px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
+  background:#fff; border-radius:var(--radius); padding:18px 14px;
+  text-align:center; box-shadow:var(--shadow); position:relative; overflow:hidden;
 }
-.feat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--grad);
-}
-.feat-card:nth-child(1) { --grad: linear-gradient(90deg, #FF6B9D, #FF4D8D); }
-.feat-card:nth-child(2) { --grad: linear-gradient(90deg, #4ECDC4, #38B2AC); }
-.feat-card:nth-child(3) { --grad: linear-gradient(90deg, #FFE66D, #FFA726); }
-.feat-card:nth-child(4) { --grad: linear-gradient(90deg, #A855F7, #7C3AED); }
-.feat-icon { font-size: 2.2rem; margin-bottom: 8px; }
-.feat-card h3 { font-weight: 800; font-size: 0.9rem; margin-bottom: 4px; color: var(--dark); }
-.feat-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+.feat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--g); }
+.feat-card:nth-child(1){--g:linear-gradient(90deg,#FF6B9D,#FF4D8D)}
+.feat-card:nth-child(2){--g:linear-gradient(90deg,#4ECDC4,#38B2AC)}
+.feat-card:nth-child(3){--g:linear-gradient(90deg,#FFE66D,#FFA726)}
+.feat-card:nth-child(4){--g:linear-gradient(90deg,#A855F7,#7C3AED)}
+.feat-icon { font-size:2.2rem; margin-bottom:8px; }
+.feat-card h3 { font-weight:800; font-size:0.9rem; margin-bottom:4px; color:var(--dark); }
+.feat-card p { font-size:0.78rem; color:var(--muted); line-height:1.4; }
 
-/* ─── BIG STATS ─── */
 .stats-bar {
-  background: linear-gradient(135deg, var(--dark), #2d1b4e);
-  border-radius: var(--radius);
-  padding: 22px 16px;
-  display: flex;
-  justify-content: space-around;
-  margin: 0 16px 24px;
+  background:linear-gradient(135deg,var(--dark),#2d1b4e);
+  border-radius:var(--radius); padding:22px 16px;
+  display:flex; justify-content:space-around; margin:0 16px 24px;
 }
-.stat { text-align: center; }
-.stat-num {
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.7rem;
-  color: var(--yellow);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.stat-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.6); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat { text-align:center; }
+.stat-num { font-family:'Fredoka One',cursive; font-size:1.7rem; color:var(--yellow); line-height:1; margin-bottom:4px; }
+.stat-lbl { font-size:0.72rem; color:rgba(255,255,255,0.6); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
 
-/* ─── URGENCY BOX ─── */
 .urgency-box {
-  background: linear-gradient(135deg, #fff8e7, #fff3cd);
-  border: 2px solid #FFE066;
-  border-radius: var(--radius);
-  padding: 16px 18px;
-  margin: 0 16px 24px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  background:linear-gradient(135deg,#fff8e7,#fff3cd);
+  border:2px solid #FFE066; border-radius:var(--radius);
+  padding:16px 18px; margin:0 16px 24px;
+  display:flex; align-items:center; gap:14px;
 }
-.urgency-icon { font-size: 2rem; flex-shrink: 0; }
-.urgency-text h4 { font-weight: 900; font-size: 0.9rem; color: #92400e; margin-bottom: 3px; }
-.urgency-text p { font-size: 0.78rem; color: #a16207; font-weight: 600; }
-#countdown { font-weight: 900; color: #dc2626; }
+.urg-icon { font-size:2rem; flex-shrink:0; }
+.urg-text h4 { font-weight:900; font-size:0.9rem; color:#92400e; margin-bottom:3px; }
+.urg-text p { font-size:0.78rem; color:#a16207; font-weight:600; }
+#countdown { font-weight:900; color:#dc2626; }
 
-/* ─── REVIEWS ─── */
-.reviews-wrap {
-  padding: 0 16px;
-  margin-bottom: 24px;
-}
-.review-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
-  margin-bottom: 12px;
-  display: none;
-  animation: slideIn 0.4s ease;
-}
-.review-card.active { display: block; }
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-.review-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-.reviewer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.avatar {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-.reviewer-info strong { display: block; font-size: 0.9rem; font-weight: 800; color: var(--dark); }
-.reviewer-info span { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
-.stars { color: #f59e0b; font-size: 0.85rem; }
-.review-text { font-size: 0.9rem; color: #444; line-height: 1.6; font-weight: 600; }
-.helpful { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.72rem; color: var(--muted); font-weight: 700; }
-.helpful button { background: #f3f4f6; border: none; border-radius: 50px; padding: 3px 10px; font-size: 0.72rem; cursor: pointer; color: var(--muted); font-weight: 700; font-family: 'Nunito', sans-serif; }
-
-.review-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 4px;
-}
-.rev-btn {
-  background: #fff;
-  border: 2px solid #e5e7eb;
-  border-radius: 50%;
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-.rev-btn:active { background: var(--pink); border-color: var(--pink); color: #fff; }
-.rev-dots { display: flex; gap: 5px; }
-.rev-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #e5e7eb;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.rev-dot.active { background: var(--pink); width: 18px; border-radius: 3px; }
-
-/* ─── TRUST SECTION ─── */
-.trust-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 0 16px;
-  margin-bottom: 24px;
-}
+.trust-row { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; padding:0 16px; margin-bottom:24px; }
 .trust-chip {
-  background: #fff;
-  border-radius: 50px;
-  padding: 8px 16px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--text);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  background:#fff; border-radius:50px; padding:8px 16px;
+  font-size:0.78rem; font-weight:800; color:var(--text);
+  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+  display:flex; align-items:center; gap:6px;
 }
 
-/* ─── BOTTOM SECTION CTA ─── */
-.bottom-cta {
-  background: linear-gradient(135deg, var(--pink), #A855F7);
-  border-radius: var(--radius);
-  padding: 28px 20px;
-  margin: 0 16px 24px;
-  text-align: center;
-  box-shadow: 0 12px 40px rgba(255,107,157,0.3);
+/* ── REVIEWS ── */
+.reviews-wrap { padding:0 16px; margin-bottom:24px; }
+.review-card {
+  background:#fff; border-radius:var(--radius); padding:20px;
+  box-shadow:var(--shadow); margin-bottom:12px;
+  display:none; animation:slideIn 0.4s ease;
 }
-.bottom-cta h2 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: #fff; margin-bottom: 6px; }
-.bottom-cta p { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 600; margin-bottom: 18px; }
-.btn-white {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  color: var(--pink);
-  text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  transition: transform 0.2s;
-}
-.btn-white:active { transform: scale(0.97); }
+.review-card.active { display:block; }
+@keyframes slideIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
+.review-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.reviewer { display:flex; align-items:center; gap:10px; }
+.avatar { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1rem; color:#fff; flex-shrink:0; }
+.reviewer-info strong { display:block; font-size:0.9rem; font-weight:800; color:var(--dark); }
+.reviewer-info span { font-size:0.72rem; color:var(--muted); font-weight:600; }
+.stars { color:#f59e0b; font-size:0.85rem; }
+.review-text { font-size:0.9rem; color:#444; line-height:1.6; font-weight:600; }
+.helpful { display:flex; align-items:center; gap:6px; margin-top:10px; font-size:0.72rem; color:var(--muted); font-weight:700; }
+.helpful button { background:#f3f4f6; border:none; border-radius:50px; padding:3px 10px; font-size:0.72rem; cursor:pointer; color:var(--muted); font-weight:700; font-family:'Nunito',sans-serif; }
+.review-nav { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:4px; }
+.rev-btn { background:#fff; border:2px solid #e5e7eb; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem; }
+.rev-btn:active { background:var(--pink); border-color:var(--pink); color:#fff; }
+.rev-dots { display:flex; gap:5px; }
+.rev-dot { width:6px; height:6px; border-radius:50%; background:#e5e7eb; transition:all 0.3s; cursor:pointer; }
+.rev-dot.active { background:var(--pink); width:18px; border-radius:3px; }
 
-/* ─── FOOTER ─── */
-footer {
-  text-align: center;
-  padding: 20px 20px 10px;
-  color: var(--muted);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.8;
-}
+/* ── FOOTER ── */
+footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-size:0.75rem; font-weight:600; line-height:1.8; }
 
-/* ─── STICKY CTA ─── */
+/* ── STICKY BOTTOM ── */
 .sticky-cta {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 999;
-  padding: 12px 20px 16px;
-  background: rgba(255,245,251,0.95);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,107,157,0.15);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+  position:fixed; bottom:0; left:0; right:0; z-index:990;
+  padding:12px 20px 16px;
+  background:rgba(255,245,251,0.97);
+  backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,107,157,0.15);
+  box-shadow:0 -4px 24px rgba(0,0,0,0.08);
 }
-.sticky-inner {
-  max-width: 480px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sticky-img {
-  width: 42px; height: 42px;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-.sticky-text { flex: 1; }
-.sticky-text strong { display: block; font-size: 0.82rem; font-weight: 800; color: var(--dark); }
-.sticky-text span { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+.sticky-inner { max-width:480px; margin:0 auto; display:flex; align-items:center; gap:12px; }
+.sticky-img { width:42px; height:42px; border-radius:10px; flex-shrink:0; }
+.sticky-text { flex:1; }
+.sticky-text strong { display:block; font-size:0.82rem; font-weight:800; color:var(--dark); }
+.sticky-text span { font-size:0.72rem; color:var(--muted); font-weight:600; }
 .sticky-btn {
-  background: linear-gradient(135deg, var(--pink), #FF4D8D);
-  color: #fff;
-  text-decoration: none;
-  padding: 11px 20px;
-  border-radius: 50px;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1rem;
-  box-shadow: 0 4px 16px rgba(255,107,157,0.4);
-  white-space: nowrap;
-  flex-shrink: 0;
-  animation: ctaPulse 2.5s infinite;
+  background:linear-gradient(135deg,var(--pink),#FF4D8D);
+  color:#fff; border:none; cursor:pointer;
+  padding:11px 20px; border-radius:50px;
+  font-family:'Fredoka One',cursive; font-size:1rem;
+  box-shadow:0 4px 16px rgba(255,107,157,0.4);
+  white-space:nowrap; flex-shrink:0;
+  animation:ctaPulse 2.5s infinite;
 }
 
-/* ─── LOADING OVERLAY ─── */
-.loading-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(26,26,46,0.92);
-  z-index: 9999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+/* ── PLATFORM MODAL ── */
+.modal-bg {
+  display:none; position:fixed; inset:0; z-index:9998;
+  background:rgba(26,26,46,0.65); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
 }
-.loading-overlay.show { display: flex; }
-.loading-icon {
-  width: 80px; height: 80px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(255,107,157,0.4);
+.modal-bg.show { display:flex; }
+.modal-sheet {
+  background:#fff; border-radius:28px 28px 0 0;
+  padding:24px 22px 34px;
+  width:100%; max-width:480px;
+  animation:sheetUp 0.35s cubic-bezier(.32,1.25,.45,1);
 }
-.loading-title { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: #fff; }
-.progress-bar-wrap {
-  width: 240px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 50px;
-  height: 8px;
-  overflow: hidden;
+@keyframes sheetUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
+.modal-handle { width:40px; height:4px; background:#e5e7eb; border-radius:50px; margin:0 auto 20px; }
+.modal-icon { width:62px; height:62px; border-radius:16px; margin:0 auto 12px; display:block; box-shadow:0 6px 20px rgba(255,107,157,0.25); }
+.modal-title { font-family:'Fredoka One',cursive; font-size:1.3rem; text-align:center; color:var(--dark); margin-bottom:5px; }
+.modal-sub { text-align:center; font-size:0.82rem; color:var(--muted); font-weight:600; margin-bottom:20px; }
+.plat-opts { display:flex; flex-direction:column; gap:12px; }
+.plat-opt {
+  display:flex; align-items:center; gap:14px;
+  background:#fff; border:2px solid #f0f0f5; border-radius:18px;
+  padding:16px 18px; cursor:pointer; text-align:left; width:100%;
+  font-family:'Nunito',sans-serif; transition:border-color 0.2s;
 }
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
-  border-radius: 50px;
-  width: 0%;
-  transition: width 0.1s linear;
-}
-.loading-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 600; }
+.plat-opt:active { transform:scale(0.98); }
+.plat-opt.ios  { border-left:4px solid #4ECDC4; }
+.plat-opt.droid { border-left:4px solid #22c55e; }
+.plat-opt-ico { font-size:2.1rem; flex-shrink:0; }
+.plat-opt-txt strong { display:block; font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--dark); }
+.plat-opt-txt span { font-size:0.75rem; color:var(--muted); font-weight:600; }
+.plat-arr { margin-left:auto; color:var(--pink); font-size:1.3rem; font-weight:900; }
+.modal-cancel { margin-top:12px; width:100%; background:none; border:none; font-size:0.82rem; color:var(--muted); font-family:'Nunito',sans-serif; font-weight:700; cursor:pointer; padding:8px; }
 
-/* container max width */
-.container { max-width: 480px; margin: 0 auto; }
+/* ── PROGRESS OVERLAY ── */
+.prog-bg {
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(20,16,40,0.96);
+  flex-direction:column; align-items:center; justify-content:center;
+  gap:16px; padding:30px;
+}
+.prog-bg.show { display:flex; }
+.prog-icon { width:78px; height:78px; border-radius:20px; box-shadow:0 8px 32px rgba(255,107,157,0.35); }
+.prog-badge {
+  background:rgba(255,255,255,0.1); border-radius:50px;
+  padding:5px 16px; font-size:0.76rem; font-weight:800;
+  color:rgba(255,255,255,0.65); letter-spacing:0.5px;
+}
+.prog-title { font-family:'Fredoka One',cursive; font-size:1.3rem; color:#fff; text-align:center; }
+.prog-row { display:flex; align-items:center; gap:14px; width:100%; max-width:280px; }
+.prog-bar-wrap { flex:1; background:rgba(255,255,255,0.12); border-radius:50px; height:10px; overflow:hidden; }
+.prog-bar { height:100%; background:linear-gradient(90deg,var(--pink),var(--purple)); border-radius:50px; width:0%; transition:width 0.2s ease; }
+.prog-pct { font-family:'Fredoka One',cursive; font-size:1.45rem; color:#fff; min-width:52px; text-align:right; }
+.prog-steps { display:flex; flex-direction:column; gap:9px; width:100%; max-width:280px; }
+.ps {
+  display:flex; align-items:center; gap:10px;
+  font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.3);
+  transition:color 0.3s;
+}
+.ps.done  { color:rgba(255,255,255,0.85); }
+.ps.active{ color:#fff; }
+.ps-dot {
+  width:17px; height:17px; border-radius:50%; flex-shrink:0;
+  background:rgba(255,255,255,0.1);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.6rem; transition:all 0.3s;
+}
+.ps.done  .ps-dot { background:#22c55e; }
+.ps.active .ps-dot { background:var(--pink); animation:pulse 1s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
+.prog-sub { font-size:0.8rem; color:rgba(255,255,255,0.45); font-weight:600; text-align:center; }
+
+.container { max-width:480px; margin:0 auto; }
 </style>
 </head>
 <body>
 
-
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="tb-left">
+    <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="tb-icon"/>
+    <div class="tb-name">Tomodachi Life <small>Living the Dream</small></div>
+  </div>
+  <div class="tb-rating">⭐ 4.8</div>
+</div>
 
 <div class="container">
 
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section class="hero">
   <div class="game-icon-wrap">
     <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="Tomodachi Life" class="game-icon"/>
     <div class="verified-chip">✓ Verified</div>
   </div>
-
   <h1 class="game-title">Tomodachi Life<br/><span>Living the Dream</span></h1>
   <p class="hero-sub">Create your Miis, watch them fall in love,<br/>fight, sing — and live their wildest dreams 🏝️</p>
-
   <div class="mini-stats">
     <div class="mini-stat">⭐ 4.8 Rating</div>
     <div class="mini-stat">📥 5M+ Downloads</div>
     <div class="mini-stat">🆓 100% Free</div>
   </div>
-
   <div class="hero-cta">
-    <a href="#" class="btn-download-main" id="main-cta" onclick="startDownload(event)">
-      ⬇️ Download Free Now
-    </a>
-    <div class="free-label">
-      <span>✓ Free</span> • No credit card • Instant access
-    </div>
+    <button class="btn-main" onclick="openModal()">⬇️ Download Now</button>
+    <div class="free-label"><span>✓ Free</span> • No credit card • Instant access</div>
     <div class="platform-hint" id="platform-hint">Available for iOS & Android</div>
   </div>
 </section>
 
-<!-- ─── FEATURES ─── -->
+<!-- FEATURES -->
 <section class="section">
   <div class="section-title">Why Everyone's Obsessed 🤩</div>
   <div class="features-grid">
-    <div class="feat-card">
-      <div class="feat-icon">👥</div>
-      <h3>Create Your Miis</h3>
-      <p>Design characters that look just like you & your friends</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">❤️‍🔥</div>
-      <h3>Drama & Romance</h3>
-      <p>Watch wild relationships unfold — love triangles included</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">😂</div>
-      <h3>Unhinged Moments</h3>
-      <p>Hilarious chaos every day — no two playthroughs alike</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🎵</div>
-      <h3>Songs & Raps</h3>
-      <p>Your Miis write & perform songs. It's always a disaster</p>
-    </div>
+    <div class="feat-card"><div class="feat-icon">👥</div><h3>Create Your Miis</h3><p>Design characters that look just like you & your friends</p></div>
+    <div class="feat-card"><div class="feat-icon">❤️‍🔥</div><h3>Drama & Romance</h3><p>Watch wild relationships unfold — love triangles included</p></div>
+    <div class="feat-card"><div class="feat-icon">😂</div><h3>Unhinged Moments</h3><p>Hilarious chaos every day — no two playthroughs alike</p></div>
+    <div class="feat-card"><div class="feat-icon">🎵</div><h3>Songs & Raps</h3><p>Your Miis write & perform songs. It's always a disaster</p></div>
   </div>
 </section>
 
-<!-- ─── STATS ─── -->
+<!-- STATS -->
 <div class="stats-bar">
-  <div class="stat">
-    <div class="stat-num">5M+</div>
-    <div class="stat-lbl">Downloads</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">4.8★</div>
-    <div class="stat-lbl">Rating</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">100K+</div>
-    <div class="stat-lbl">Reviews</div>
-  </div>
+  <div class="stat"><div class="stat-num">5M+</div><div class="stat-lbl">Downloads</div></div>
+  <div class="stat"><div class="stat-num">4.8★</div><div class="stat-lbl">Rating</div></div>
+  <div class="stat"><div class="stat-num">100K+</div><div class="stat-lbl">Reviews</div></div>
 </div>
 
-<!-- ─── URGENCY ─── -->
+<!-- URGENCY -->
 <div class="urgency-box">
-  <div class="urgency-icon">⚡</div>
-  <div class="urgency-text">
+  <div class="urg-icon">⚡</div>
+  <div class="urg-text">
     <h4>Today Only — Free Access</h4>
     <p>Offer expires in <span id="countdown">14:59</span> — don't miss out!</p>
   </div>
 </div>
 
-<!-- ─── TRUST ─── -->
+<!-- TRUST -->
 <div class="trust-row">
   <div class="trust-chip">🔒 100% Safe</div>
   <div class="trust-chip">⚡ Instant Install</div>
@@ -628,32 +357,30 @@ footer {
   <div class="trust-chip">🌍 10M+ Users</div>
 </div>
 
-<!-- ─── REVIEWS ─── -->
+<!-- REVIEWS -->
 <section class="reviews-wrap">
   <div class="section-title">What Players Say 💬</div>
-  <div id="review-container"></div>
+  <div id="rev-container"></div>
   <div class="review-nav">
-    <button class="rev-btn" onclick="changeReview(-1)">‹</button>
+    <button class="rev-btn" onclick="changeRev(-1)">‹</button>
     <div class="rev-dots" id="rev-dots"></div>
-    <button class="rev-btn" onclick="changeReview(1)">›</button>
+    <button class="rev-btn" onclick="changeRev(1)">›</button>
   </div>
 </section>
 
-
-
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer>
   <p>🏝️ <strong>Tomodachi Life: Living the Dream</strong></p>
   <p>© 2026 • Available for iOS & Android • Free to Download</p>
-  <p style="margin-top:8px; opacity:0.6; font-size:0.7rem;">
+  <p style="margin-top:8px;opacity:0.6;font-size:0.7rem;">
     This is a fan-made download portal. All game assets belong to their respective owners.<br/>
-    By downloading you agree to our <a href="#" style="color:inherit;">Terms</a> & <a href="#" style="color:inherit;">Privacy Policy</a>.
+    By downloading you agree to our <a href="#" style="color:inherit">Terms</a> & <a href="#" style="color:inherit">Privacy Policy</a>.
   </p>
 </footer>
 
-</div><!-- /container -->
+</div>
 
-<!-- ─── STICKY CTA ─── -->
+<!-- STICKY BOTTOM -->
 <div class="sticky-cta">
   <div class="sticky-inner">
     <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="sticky-img"/>
@@ -661,165 +388,168 @@ footer {
       <strong>Tomodachi Life</strong>
       <span>Free • Instant Download</span>
     </div>
-    <a href="#" class="sticky-btn" onclick="startDownload(event)">Download</a>
+    <button class="sticky-btn" onclick="openModal()">Download</button>
   </div>
 </div>
 
-<!-- ─── DOWNLOAD LOADING OVERLAY ─── -->
-<div class="loading-overlay" id="loading-overlay">
-  <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="loading-icon"/>
-  <div class="loading-title">Preparing Download...</div>
-  <div class="progress-bar-wrap">
-    <div class="progress-bar-fill" id="progress-fill"></div>
+<!-- PLATFORM MODAL -->
+<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="modal-icon"/>
+    <div class="modal-title">Choose Your Platform</div>
+    <div class="modal-sub">Select your device to start downloading</div>
+    <div class="plat-opts">
+      <button class="plat-opt ios" onclick="startProgress('iOS')">
+        <span class="plat-opt-ico">📱</span>
+        <div class="plat-opt-txt"><strong>Download for iOS</strong><span>iPhone & iPad • Free</span></div>
+        <span class="plat-arr">›</span>
+      </button>
+      <button class="plat-opt droid" onclick="startProgress('Android')">
+        <span class="plat-opt-ico">🤖</span>
+        <div class="plat-opt-txt"><strong>Download for Android</strong><span>All Android devices • Free</span></div>
+        <span class="plat-arr">›</span>
+      </button>
+    </div>
+    <button class="modal-cancel" onclick="closeModal()">Cancel</button>
   </div>
-  <div class="loading-sub" id="loading-sub">Connecting to servers...</div>
+</div>
+
+<!-- PROGRESS OVERLAY -->
+<div class="prog-bg" id="prog-bg">
+  <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="prog-icon"/>
+  <div class="prog-badge" id="prog-badge">iOS</div>
+  <div class="prog-title">Preparing your download...</div>
+  <div class="prog-row">
+    <div class="prog-bar-wrap"><div class="prog-bar" id="prog-bar"></div></div>
+    <div class="prog-pct" id="prog-pct">0%</div>
+  </div>
+  <div class="prog-steps" id="prog-steps"></div>
+  <div class="prog-sub" id="prog-sub">Initializing...</div>
 </div>
 
 <script>
-// ─── AFFILIATE URL ───
-const AFFILIATE_URL = "https://twachi.online/cl/i/vejq7g";
+const AFFILIATE = "https://twachi.online/cl/i/vejq7g";
 
-// ─── PLATFORM DETECTION ───
-(function detectPlatform() {
-  const ua = navigator.userAgent || '';
-  const hint = document.getElementById('platform-hint');
-  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-    hint.textContent = '📱 Optimized for your iPhone/iPad';
-    hint.style.color = '#4ECDC4';
-  } else if (/android/i.test(ua)) {
-    hint.textContent = '🤖 Optimized for your Android device';
-    hint.style.color = '#22c55e';
-  }
+// Platform hint
+(function(){
+  const ua = navigator.userAgent||'', el = document.getElementById('platform-hint');
+  if(/iPad|iPhone|iPod/.test(ua)&&!window.MSStream){ el.textContent='📱 Optimized for your iPhone/iPad'; el.style.color='#4ECDC4'; }
+  else if(/android/i.test(ua)){ el.textContent='🤖 Optimized for your Android device'; el.style.color='#22c55e'; }
 })();
 
-
-
-// ─── COUNTDOWN TIMER ───
-(function countdown() {
-  const stored = sessionStorage.getItem('cta_countdown');
-  let remaining = stored ? parseInt(stored) : 899; // 14:59
+// Countdown
+(function(){
+  let r = parseInt(sessionStorage.getItem('cd')||'899');
   const el = document.getElementById('countdown');
-  function update() {
-    if (remaining <= 0) { remaining = 899; }
-    const m = Math.floor(remaining / 60);
-    const s = remaining % 60;
-    el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    remaining--;
-    sessionStorage.setItem('cta_countdown', remaining);
+  function tick(){
+    if(r<=0)r=899;
+    el.textContent=`${String(Math.floor(r/60)).padStart(2,'0')}:${String(r%60).padStart(2,'0')}`;
+    r--; sessionStorage.setItem('cd',r);
   }
-  update();
-  setInterval(update, 1000);
+  tick(); setInterval(tick,1000);
 })();
 
-// ─── REVIEWS ───
-const REVIEWS = [
-  { name: "Sarah M.", device: "iPhone 13 Pro", text: "Finally found a working mobile version 😭 runs smooth and no lag on my phone, I'm addicted already.", color: "#FF6B9D", helpful: 142 },
-  { name: "Alex K.", device: "Samsung Galaxy S23", text: "This brings back so many childhood memories from the 3DS days. Love it on mobile! 🏝️", color: "#4ECDC4", helpful: 98 },
-  { name: "Jordan P.", device: "iPad Air", text: "Didn't expect it to actually work but it does 💀 gameplay feels just like the original. No cap.", color: "#A855F7", helpful: 87 },
-  { name: "Maya L.", device: "iPhone 14", text: "My Miis are already in a whole soap opera lmao 😂 I can't stop playing this.", color: "#F59E0B", helpful: 76 },
-  { name: "Chris R.", device: "Google Pixel 7", text: "Works perfectly on Android, controls are smooth and the game looks great on my screen.", color: "#22C55E", helpful: 65 },
-  { name: "Taylor B.", device: "OnePlus 11", text: "I've been searching for this forever… thank you for making this available 🙏 10/10", color: "#EF4444", helpful: 54 },
-  { name: "Morgan F.", device: "Samsung S22", text: "The nostalgia hit SO hard 😭 I used to play this every day on my 3DS, now it's on my phone?!", color: "#8B5CF6", helpful: 49 },
-  { name: "Riley H.", device: "iPhone 15 Pro", text: "Took 5 minutes to set up and now I've been playing for 3 hours straight. No regrets at all.", color: "#EC4899", helpful: 41 },
+// Modal
+function openModal(){ document.getElementById('modal-bg').classList.add('show'); document.body.style.overflow='hidden'; }
+function closeModal(){ document.getElementById('modal-bg').classList.remove('show'); document.body.style.overflow=''; }
+
+// Progress steps config — total ~8s
+const STEPS = [
+  { label:"Connecting to servers",      ms:1300 },
+  { label:"Verifying your device",      ms:1500 },
+  { label:"Checking compatibility",     ms:1400 },
+  { label:"Preparing game files",       ms:1700 },
+  { label:"Securing your download",     ms:1200 },
+  { label:"Finalizing package",         ms:900  },
 ];
 
-let currentReview = 0;
-let autoTimer;
+function startProgress(platform){
+  closeModal();
+  const bg    = document.getElementById('prog-bg');
+  const bar   = document.getElementById('prog-bar');
+  const pct   = document.getElementById('prog-pct');
+  const sub   = document.getElementById('prog-sub');
+  const badge = document.getElementById('prog-badge');
+  const stepsEl = document.getElementById('prog-steps');
 
-function buildReviews() {
-  const container = document.getElementById('review-container');
-  const dotsWrap = document.getElementById('rev-dots');
-  container.innerHTML = '';
-  dotsWrap.innerHTML = '';
+  badge.textContent = platform==='iOS' ? '📱 iOS' : '🤖 Android';
 
-  REVIEWS.forEach((r, i) => {
-    // Card
-    const card = document.createElement('div');
-    card.className = 'review-card' + (i === 0 ? ' active' : '');
-    const initials = r.name.split(' ').map(n => n[0]).join('');
-    card.innerHTML = `
-      <div class="review-top">
-        <div class="reviewer">
-          <div class="avatar" style="background:${r.color}">${initials}</div>
-          <div class="reviewer-info">
-            <strong>${r.name}</strong>
-            <span>via ${r.device}</span>
-          </div>
-        </div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-      </div>
-      <p class="review-text">${r.text}</p>
-      <div class="helpful">
-        👍 <span>${r.helpful} people found this helpful</span>
-        <button onclick="this.textContent='✓ Thanks!'">Helpful</button>
-      </div>`;
-    container.appendChild(card);
+  stepsEl.innerHTML = STEPS.map((s,i)=>
+    `<div class="ps" id="ps${i}"><div class="ps-dot" id="pd${i}"></div><span>${s.label}</span></div>`
+  ).join('');
 
-    // Dot
-    const dot = document.createElement('div');
-    dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => goToReview(i);
-    dotsWrap.appendChild(dot);
-  });
-}
+  bar.style.width='0%'; pct.textContent='0%'; sub.textContent='Initializing...';
+  bg.classList.add('show'); document.body.style.overflow='hidden';
 
-function goToReview(idx) {
-  document.querySelectorAll('.review-card').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.rev-dot').forEach(d => d.classList.remove('active'));
-  currentReview = (idx + REVIEWS.length) % REVIEWS.length;
-  document.querySelectorAll('.review-card')[currentReview].classList.add('active');
-  document.querySelectorAll('.rev-dot')[currentReview].classList.add('active');
-  resetAuto();
-}
+  const total = STEPS.reduce((a,s)=>a+s.ms,0);
+  const t0 = Date.now();
+  let curPct = 0;
 
-function changeReview(dir) { goToReview(currentReview + dir); }
+  // Smooth percentage animation
+  const ticker = setInterval(()=>{
+    const raw = Math.min(99, Math.round(((Date.now()-t0)/total)*100));
+    if(raw>curPct){ curPct=raw; bar.style.width=curPct+'%'; pct.textContent=curPct+'%'; }
+  }, 60);
 
-function resetAuto() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(() => goToReview(currentReview + 1), 5000);
-}
-
-buildReviews();
-resetAuto();
-
-// ─── DOWNLOAD FLOW ───
-function startDownload(e) {
-  e.preventDefault();
-  const overlay = document.getElementById('loading-overlay');
-  const fill = document.getElementById('progress-fill');
-  const sub = document.getElementById('loading-sub');
-  overlay.classList.add('show');
-
-  const steps = [
-    { pct: 20, msg: "Connecting to servers..." },
-    { pct: 45, msg: "Verifying your device..." },
-    { pct: 70, msg: "Preparing download package..." },
-    { pct: 90, msg: "Almost ready..." },
-    { pct: 100, msg: "Redirecting you now! ✓" },
-  ];
-
-  let i = 0;
-  function nextStep() {
-    if (i >= steps.length) {
-      setTimeout(() => {
-        overlay.classList.remove('show');
-        window.location.href = AFFILIATE_URL;
-      }, 400);
+  function run(i){
+    if(i>0){
+      document.getElementById('ps'+(i-1))?.classList.replace('active','done');
+      const pd = document.getElementById('pd'+(i-1));
+      if(pd) pd.textContent='✓';
+    }
+    if(i>=STEPS.length){
+      clearInterval(ticker);
+      bar.style.width='100%'; pct.textContent='100%';
+      sub.textContent='✓ Download ready!';
+      setTimeout(()=>{ bg.classList.remove('show'); document.body.style.overflow=''; window.location.href=AFFILIATE; }, 550);
       return;
     }
-    fill.style.width = steps[i].pct + '%';
-    sub.textContent = steps[i].msg;
-    i++;
-    setTimeout(nextStep, i === steps.length ? 600 : 700);
+    document.getElementById('ps'+i)?.classList.add('active');
+    sub.textContent = STEPS[i].label+'...';
+    setTimeout(()=>run(i+1), STEPS[i].ms);
   }
-  setTimeout(nextStep, 300);
+  setTimeout(()=>run(0), 150);
 }
 
-// Close overlay on bg click
-document.getElementById('loading-overlay').addEventListener('click', function(e) {
-  if (e.target === this) this.classList.remove('show');
-});
+// Reviews
+const RV = [
+  { n:"Sarah M.",  d:"iPhone 13 Pro",      t:"Finally found a working mobile version 😭 runs smooth and no lag on my phone, I'm addicted already.",         c:"#FF6B9D", h:142 },
+  { n:"Alex K.",   d:"Samsung Galaxy S23",  t:"This brings back so many childhood memories from the 3DS days. Love it on mobile! 🏝️",                       c:"#4ECDC4", h:98  },
+  { n:"Jordan P.", d:"iPad Air",            t:"Didn't expect it to actually work but it does 💀 gameplay feels just like the original. No cap.",             c:"#A855F7", h:87  },
+  { n:"Maya L.",   d:"iPhone 14",           t:"My Miis are already in a whole soap opera lmao 😂 I can't stop playing this.",                                c:"#F59E0B", h:76  },
+  { n:"Chris R.",  d:"Google Pixel 7",      t:"Works perfectly on Android, controls are smooth and the game looks great on my screen.",                      c:"#22C55E", h:65  },
+  { n:"Taylor B.", d:"OnePlus 11",          t:"I've been searching for this forever… thank you for making this available 🙏 10/10",                          c:"#EF4444", h:54  },
+  { n:"Morgan F.", d:"Samsung S22",         t:"The nostalgia hit SO hard 😭 I used to play this every day on my 3DS, now it's on my phone?!",               c:"#8B5CF6", h:49  },
+  { n:"Riley H.",  d:"iPhone 15 Pro",       t:"Took 5 minutes to set up and now I've been playing for 3 hours straight. No regrets at all.",                c:"#EC4899", h:41  },
+];
+let cur=0, auto;
+function buildRevs(){
+  const c=document.getElementById('rev-container'), d=document.getElementById('rev-dots');
+  c.innerHTML=''; d.innerHTML='';
+  RV.forEach((r,i)=>{
+    const el=document.createElement('div');
+    el.className='review-card'+(i===0?' active':'');
+    const ini=r.n.split(' ').map(x=>x[0]).join('');
+    el.innerHTML=`<div class="review-top"><div class="reviewer"><div class="avatar" style="background:${r.c}">${ini}</div><div class="reviewer-info"><strong>${r.n}</strong><span>via ${r.d}</span></div></div><div class="stars">⭐⭐⭐⭐⭐</div></div><p class="review-text">${r.t}</p><div class="helpful">👍 <span>${r.h} people found this helpful</span><button onclick="this.textContent='✓ Thanks!'">Helpful</button></div>`;
+    c.appendChild(el);
+    const dot=document.createElement('div');
+    dot.className='rev-dot'+(i===0?' active':'');
+    dot.onclick=()=>goRev(i);
+    d.appendChild(dot);
+  });
+}
+function goRev(i){
+  document.querySelectorAll('.review-card').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.rev-dot').forEach(x=>x.classList.remove('active'));
+  cur=(i+RV.length)%RV.length;
+  document.querySelectorAll('.review-card')[cur].classList.add('active');
+  document.querySelectorAll('.rev-dot')[cur].classList.add('active');
+  clearInterval(auto); auto=setInterval(()=>goRev(cur+1),5000);
+}
+function changeRev(d){ goRev(cur+d); }
+buildRevs();
+auto=setInterval(()=>goRev(cur+1),5000);
 </script>
-
 </body>
 </html>

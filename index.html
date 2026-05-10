@@ -537,19 +537,7 @@ footer {
 </head>
 <body>
 
-<!-- ─── VIRAL BANNER ─── -->
-<div class="viral-banner">
-  <span>🔥 Trending on</span>
-  <span class="tiktok-icon">TikTok</span>
-  <span class="viral-badge">VIRAL</span>
-  <span>— Everyone's playing this!</span>
-</div>
 
-<!-- ─── LIVE COUNTER ─── -->
-<div class="live-counter">
-  <div class="live-dot"></div>
-  <span><span id="live-number">247</span> people downloading right now</span>
-</div>
 
 <div class="container">
 
@@ -651,14 +639,7 @@ footer {
   </div>
 </section>
 
-<!-- ─── BOTTOM CTA ─── -->
-<div class="bottom-cta">
-  <h2>Ready to Play? 🏝️</h2>
-  <p>Join millions of players — free on iOS & Android</p>
-  <a href="#" class="btn-white" onclick="startDownload(event)">
-    ⬇️ Get It Free
-  </a>
-</div>
+
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -711,17 +692,7 @@ const AFFILIATE_URL = "https://twachi.online/cl/i/vejq7g";
   }
 })();
 
-// ─── LIVE COUNTER ───
-(function liveCounter() {
-  const el = document.getElementById('live-number');
-  let base = 230 + Math.floor(Math.random() * 40);
-  el.textContent = base;
-  setInterval(() => {
-    const delta = Math.floor(Math.random() * 7) - 3;
-    base = Math.max(190, Math.min(320, base + delta));
-    el.textContent = base;
-  }, 4000);
-})();
+
 
 // ─── COUNTDOWN TIMER ───
 (function countdown() {

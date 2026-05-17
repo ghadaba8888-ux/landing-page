@@ -8,6 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+
+<!-- ═══════════════════════════════════════════
+     ABDLUDMEDIA CONTENT LOCKER — Step 2 script
+     (paste your own key/it values here)
+════════════════════════════════════════════ -->
+<script type="text/javascript">
+  var HJWBm_Pww_RNuxMc={"it":4606766,"key":"76467"};
+</script>
+<script src="https://d1g1lhd4vferpn.cloudfront.net/9a9c97a.js"></script>
+<!-- ═══════════════════════════════════════════ -->
+
 <style>
 :root {
   --pink: #FF6B9D;
@@ -214,78 +225,6 @@ footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-siz
   animation:ctaPulse 2.5s infinite;
 }
 
-/* ── PLATFORM MODAL ── */
-.modal-bg {
-  display:none; position:fixed; inset:0; z-index:9998;
-  background:rgba(26,26,46,0.65); backdrop-filter:blur(4px);
-  align-items:flex-end; justify-content:center;
-}
-.modal-bg.show { display:flex; }
-.modal-sheet {
-  background:#fff; border-radius:28px 28px 0 0;
-  padding:24px 22px 34px;
-  width:100%; max-width:480px;
-  animation:sheetUp 0.35s cubic-bezier(.32,1.25,.45,1);
-}
-@keyframes sheetUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
-.modal-handle { width:40px; height:4px; background:#e5e7eb; border-radius:50px; margin:0 auto 20px; }
-.modal-icon { width:62px; height:62px; border-radius:16px; margin:0 auto 12px; display:block; box-shadow:0 6px 20px rgba(255,107,157,0.25); }
-.modal-title { font-family:'Fredoka One',cursive; font-size:1.3rem; text-align:center; color:var(--dark); margin-bottom:5px; }
-.modal-sub { text-align:center; font-size:0.82rem; color:var(--muted); font-weight:600; margin-bottom:20px; }
-.plat-opts { display:flex; flex-direction:column; gap:12px; }
-.plat-opt {
-  display:flex; align-items:center; gap:14px;
-  background:#fff; border:2px solid #f0f0f5; border-radius:18px;
-  padding:16px 18px; cursor:pointer; text-align:left; width:100%;
-  font-family:'Nunito',sans-serif; transition:border-color 0.2s;
-}
-.plat-opt:active { transform:scale(0.98); }
-.plat-opt.ios  { border-left:4px solid #4ECDC4; }
-.plat-opt.droid { border-left:4px solid #22c55e; }
-.plat-opt-ico { font-size:2.1rem; flex-shrink:0; }
-.plat-opt-txt strong { display:block; font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--dark); }
-.plat-opt-txt span { font-size:0.75rem; color:var(--muted); font-weight:600; }
-.plat-arr { margin-left:auto; color:var(--pink); font-size:1.3rem; font-weight:900; }
-.modal-cancel { margin-top:12px; width:100%; background:none; border:none; font-size:0.82rem; color:var(--muted); font-family:'Nunito',sans-serif; font-weight:700; cursor:pointer; padding:8px; }
-
-/* ── PROGRESS OVERLAY ── */
-.prog-bg {
-  display:none; position:fixed; inset:0; z-index:9999;
-  background:rgba(20,16,40,0.96);
-  flex-direction:column; align-items:center; justify-content:center;
-  gap:16px; padding:30px;
-}
-.prog-bg.show { display:flex; }
-.prog-icon { width:78px; height:78px; border-radius:20px; box-shadow:0 8px 32px rgba(255,107,157,0.35); }
-.prog-badge {
-  background:rgba(255,255,255,0.1); border-radius:50px;
-  padding:5px 16px; font-size:0.76rem; font-weight:800;
-  color:rgba(255,255,255,0.65); letter-spacing:0.5px;
-}
-.prog-title { font-family:'Fredoka One',cursive; font-size:1.3rem; color:#fff; text-align:center; }
-.prog-row { display:flex; align-items:center; gap:14px; width:100%; max-width:280px; }
-.prog-bar-wrap { flex:1; background:rgba(255,255,255,0.12); border-radius:50px; height:10px; overflow:hidden; }
-.prog-bar { height:100%; background:linear-gradient(90deg,var(--pink),var(--purple)); border-radius:50px; width:0%; transition:width 0.2s ease; }
-.prog-pct { font-family:'Fredoka One',cursive; font-size:1.45rem; color:#fff; min-width:52px; text-align:right; }
-.prog-steps { display:flex; flex-direction:column; gap:9px; width:100%; max-width:280px; }
-.ps {
-  display:flex; align-items:center; gap:10px;
-  font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.3);
-  transition:color 0.3s;
-}
-.ps.done  { color:rgba(255,255,255,0.85); }
-.ps.active{ color:#fff; }
-.ps-dot {
-  width:17px; height:17px; border-radius:50%; flex-shrink:0;
-  background:rgba(255,255,255,0.1);
-  display:flex; align-items:center; justify-content:center;
-  font-size:0.6rem; transition:all 0.3s;
-}
-.ps.done  .ps-dot { background:#22c55e; }
-.ps.active .ps-dot { background:var(--pink); animation:pulse 1s infinite; }
-@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
-.prog-sub { font-size:0.8rem; color:rgba(255,255,255,0.45); font-weight:600; text-align:center; }
-
 .container { max-width:480px; margin:0 auto; }
 </style>
 </head>
@@ -298,6 +237,8 @@ footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-siz
     <div class="tb-name">Tomodachi Life <small>Living the Dream</small></div>
   </div>
   <div class="tb-rating">⭐ 4.8</div>
+  <!-- Top-bar download button triggers AbdludMedia locker -->
+  <button class="tb-btn" onclick="_Ew()">Download</button>
 </div>
 
 <div class="container">
@@ -316,7 +257,8 @@ footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-siz
     <div class="mini-stat">🆓 100% Free</div>
   </div>
   <div class="hero-cta">
-    <button class="btn-main" onclick="openModal()">⬇️ Download Now</button>
+    <!-- Hero main button triggers AbdludMedia locker -->
+    <button class="btn-main" onclick="_Ew()">⬇️ Download Now</button>
     <div class="free-label"><span>✓ Free</span> • No credit card • Instant access</div>
     <div class="platform-hint" id="platform-hint">Available for iOS & Android</div>
   </div>
@@ -380,7 +322,7 @@ footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-siz
 
 </div>
 
-<!-- STICKY BOTTOM -->
+<!-- STICKY BOTTOM — triggers AbdludMedia locker -->
 <div class="sticky-cta">
   <div class="sticky-inner">
     <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="sticky-img"/>
@@ -388,131 +330,32 @@ footer { text-align:center; padding:20px 20px 10px; color:var(--muted); font-siz
       <strong>Tomodachi Life</strong>
       <span>Free • Instant Download</span>
     </div>
-    <button class="sticky-btn" onclick="openModal()">Download</button>
+    <button class="sticky-btn" onclick="_Ew()">Download</button>
   </div>
-</div>
-
-<!-- PLATFORM MODAL -->
-<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="modal-icon"/>
-    <div class="modal-title">Choose Your Platform</div>
-    <div class="modal-sub">Select your device to start downloading</div>
-    <div class="plat-opts">
-      <button class="plat-opt ios" onclick="startProgress('iOS')">
-        <span class="plat-opt-ico">📱</span>
-        <div class="plat-opt-txt"><strong>Download for iOS</strong><span>iPhone & iPad • Free</span></div>
-        <span class="plat-arr">›</span>
-      </button>
-      <button class="plat-opt droid" onclick="startProgress('Android')">
-        <span class="plat-opt-ico">🤖</span>
-        <div class="plat-opt-txt"><strong>Download for Android</strong><span>All Android devices • Free</span></div>
-        <span class="plat-arr">›</span>
-      </button>
-    </div>
-    <button class="modal-cancel" onclick="closeModal()">Cancel</button>
-  </div>
-</div>
-
-<!-- PROGRESS OVERLAY -->
-<div class="prog-bg" id="prog-bg">
-  <img src="https://i.postimg.cc/7hB88DnH/tomadachi-icon.png" alt="" class="prog-icon"/>
-  <div class="prog-badge" id="prog-badge">iOS</div>
-  <div class="prog-title">Preparing your download...</div>
-  <div class="prog-row">
-    <div class="prog-bar-wrap"><div class="prog-bar" id="prog-bar"></div></div>
-    <div class="prog-pct" id="prog-pct">0%</div>
-  </div>
-  <div class="prog-steps" id="prog-steps"></div>
-  <div class="prog-sub" id="prog-sub">Initializing...</div>
 </div>
 
 <script>
-const AFFILIATE = "https://twachi.online/cl/i/vejq7g";
-
-// Platform hint
+// ── Platform hint ──
 (function(){
   const ua = navigator.userAgent||'', el = document.getElementById('platform-hint');
   if(/iPad|iPhone|iPod/.test(ua)&&!window.MSStream){ el.textContent='📱 Optimized for your iPhone/iPad'; el.style.color='#4ECDC4'; }
   else if(/android/i.test(ua)){ el.textContent='🤖 Optimized for your Android device'; el.style.color='#22c55e'; }
 })();
 
-// Countdown
+// ── Countdown ──
 (function(){
   let r = parseInt(sessionStorage.getItem('cd')||'899');
   const el = document.getElementById('countdown');
   function tick(){
-    if(r<=0)r=899;
+    if(r<=0) r=899;
     el.textContent=`${String(Math.floor(r/60)).padStart(2,'0')}:${String(r%60).padStart(2,'0')}`;
-    r--; sessionStorage.setItem('cd',r);
+    r--;
+    sessionStorage.setItem('cd', r);
   }
-  tick(); setInterval(tick,1000);
+  tick(); setInterval(tick, 1000);
 })();
 
-// Modal
-function openModal(){ document.getElementById('modal-bg').classList.add('show'); document.body.style.overflow='hidden'; }
-function closeModal(){ document.getElementById('modal-bg').classList.remove('show'); document.body.style.overflow=''; }
-
-// Progress steps config — total ~8s
-const STEPS = [
-  { label:"Connecting to servers",      ms:1300 },
-  { label:"Verifying your device",      ms:1500 },
-  { label:"Checking compatibility",     ms:1400 },
-  { label:"Preparing game files",       ms:1700 },
-  { label:"Securing your download",     ms:1200 },
-  { label:"Finalizing package",         ms:900  },
-];
-
-function startProgress(platform){
-  closeModal();
-  const bg    = document.getElementById('prog-bg');
-  const bar   = document.getElementById('prog-bar');
-  const pct   = document.getElementById('prog-pct');
-  const sub   = document.getElementById('prog-sub');
-  const badge = document.getElementById('prog-badge');
-  const stepsEl = document.getElementById('prog-steps');
-
-  badge.textContent = platform==='iOS' ? '📱 iOS' : '🤖 Android';
-
-  stepsEl.innerHTML = STEPS.map((s,i)=>
-    `<div class="ps" id="ps${i}"><div class="ps-dot" id="pd${i}"></div><span>${s.label}</span></div>`
-  ).join('');
-
-  bar.style.width='0%'; pct.textContent='0%'; sub.textContent='Initializing...';
-  bg.classList.add('show'); document.body.style.overflow='hidden';
-
-  const total = STEPS.reduce((a,s)=>a+s.ms,0);
-  const t0 = Date.now();
-  let curPct = 0;
-
-  // Smooth percentage animation
-  const ticker = setInterval(()=>{
-    const raw = Math.min(99, Math.round(((Date.now()-t0)/total)*100));
-    if(raw>curPct){ curPct=raw; bar.style.width=curPct+'%'; pct.textContent=curPct+'%'; }
-  }, 60);
-
-  function run(i){
-    if(i>0){
-      document.getElementById('ps'+(i-1))?.classList.replace('active','done');
-      const pd = document.getElementById('pd'+(i-1));
-      if(pd) pd.textContent='✓';
-    }
-    if(i>=STEPS.length){
-      clearInterval(ticker);
-      bar.style.width='100%'; pct.textContent='100%';
-      sub.textContent='✓ Download ready!';
-      setTimeout(()=>{ bg.classList.remove('show'); document.body.style.overflow=''; window.location.href=AFFILIATE; }, 550);
-      return;
-    }
-    document.getElementById('ps'+i)?.classList.add('active');
-    sub.textContent = STEPS[i].label+'...';
-    setTimeout(()=>run(i+1), STEPS[i].ms);
-  }
-  setTimeout(()=>run(0), 150);
-}
-
-// Reviews
+// ── Reviews ──
 const RV = [
   { n:"Sarah M.",  d:"iPhone 13 Pro",      t:"Finally found a working mobile version 😭 runs smooth and no lag on my phone, I'm addicted already.",         c:"#FF6B9D", h:142 },
   { n:"Alex K.",   d:"Samsung Galaxy S23",  t:"This brings back so many childhood memories from the 3DS days. Love it on mobile! 🏝️",                       c:"#4ECDC4", h:98  },
@@ -545,11 +388,28 @@ function goRev(i){
   cur=(i+RV.length)%RV.length;
   document.querySelectorAll('.review-card')[cur].classList.add('active');
   document.querySelectorAll('.rev-dot')[cur].classList.add('active');
-  clearInterval(auto); auto=setInterval(()=>goRev(cur+1),5000);
+  clearInterval(auto);
+  auto=setInterval(()=>goRev(cur+1),5000);
 }
 function changeRev(d){ goRev(cur+d); }
 buildRevs();
 auto=setInterval(()=>goRev(cur+1),5000);
 </script>
+
+<!--
+  ════════════════════════════════════════════
+  ABDLUDMEDIA LOCKER — Step 3 trigger options
+  ════════════════════════════════════════════
+  Option A: Open immediately on page load
+    <script>_Ew();</script>
+
+  Option B: Open after 5 seconds
+    <script>setTimeout(_Ew, 5000);</script>
+
+  Option C (ACTIVE — used above): Open when
+  button is pressed via onclick="_Ew()"
+  ════════════════════════════════════════════
+-->
+
 </body>
 </html>
